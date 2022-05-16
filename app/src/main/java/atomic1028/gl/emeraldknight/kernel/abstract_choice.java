@@ -25,11 +25,10 @@ public class abstract_choice {
 }
 
 class choice_end extends abstract_choice {
-    String end;
 
     public choice_end(String m) {
         super(Constant.GAME_OVER);
-        end = m;
+        Constant.kernel.openPara(m);
     }
 
     @Override
@@ -37,9 +36,4 @@ class choice_end extends abstract_choice {
         return "回到开始界面";
     }
 
-    @Override
-    public void chosen() {
-        Constant.kernel.openPara(end);
-        super.chosen();
-    }
 }

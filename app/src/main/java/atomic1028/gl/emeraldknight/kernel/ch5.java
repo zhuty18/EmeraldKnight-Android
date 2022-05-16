@@ -923,6 +923,19 @@ class s5_33 extends abstract_scene {
             add(new c5_33_3());
         }});
     }
+
+    @Override
+    public LinkedList<abstract_choice> load() {
+        boolean isNone = true;
+        for (int i = 0; i < option.size(); i++) {
+            isNone = isNone && (!option.get(i).show());
+        }
+        if (isNone) {
+            return new s5_32().load();
+        } else {
+            return super.load();
+        }
+    }
 }
 
 class s5_37 extends abstract_scene {

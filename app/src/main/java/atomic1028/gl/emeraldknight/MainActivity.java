@@ -15,11 +15,12 @@ import java.util.LinkedList;
 import atomic1028.gl.emeraldknight.kernel.Kernel;
 import atomic1028.gl.emeraldknight.kernel.abstract_choice;
 import atomic1028.gl.emeraldknight.ui.AboutFragment;
+import atomic1028.gl.emeraldknight.ui.CheatFragment;
 import atomic1028.gl.emeraldknight.ui.GameFragment;
 import atomic1028.gl.emeraldknight.ui.HomeFragment;
 import atomic1028.gl.emeraldknight.ui.SaveFragment;
 
-public class MainActivity extends AppCompatActivity implements HomeFragment.FragmentListener, GameFragment.GameFragmentListener, SaveFragment.SaveFragmentListener {
+public class MainActivity extends AppCompatActivity implements HomeFragment.FragmentListener, GameFragment.GameFragmentListener, SaveFragment.SaveFragmentListener,AboutFragment.AboutFragmentListener {
     private Kernel gk;
     private LinkedList<abstract_choice> choices_list;
     private boolean atGame;
@@ -145,5 +146,9 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.Frag
     public void loadEnd(int i){
         gk.loadEnd(i);
         refreshGame();
+    }
+    @Override
+    public void openCheat(){
+        switchFragment(new CheatFragment());
     }
 }
