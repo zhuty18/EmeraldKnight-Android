@@ -20,7 +20,7 @@ import atomic1028.gl.emeraldknight.ui.GameFragment;
 import atomic1028.gl.emeraldknight.ui.HomeFragment;
 import atomic1028.gl.emeraldknight.ui.SaveFragment;
 
-public class MainActivity extends AppCompatActivity implements HomeFragment.FragmentListener, GameFragment.GameFragmentListener, SaveFragment.SaveFragmentListener,AboutFragment.AboutFragmentListener {
+public class MainActivity extends AppCompatActivity implements HomeFragment.FragmentListener, GameFragment.GameFragmentListener, SaveFragment.SaveFragmentListener, AboutFragment.AboutFragmentListener {
     private Kernel gk;
     private LinkedList<abstract_choice> choices_list;
     private boolean atGame;
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.Frag
     }
 
     public void save() {
-        if (gk.inBattle()||gk.getScene().startsWith("end")) {
+        if (gk.inBattle() || gk.getScene().startsWith("end")) {
             Toast.makeText(this, "当前无法保存！", Toast.LENGTH_SHORT).show();
         } else {
             atGame = false;
@@ -142,13 +142,16 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.Frag
         atGame = !atGame;
         refreshGame();
     }
+
     @Override
-    public void loadEnd(int i){
+    public void loadEnd(int i) {
+        atGame = true;
         gk.loadEnd(i);
         refreshGame();
     }
+
     @Override
-    public void openCheat(){
+    public void openCheat() {
         switchFragment(new CheatFragment());
     }
 }
