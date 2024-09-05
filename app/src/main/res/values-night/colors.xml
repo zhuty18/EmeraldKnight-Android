@@ -7,10 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="emerald">#1afa29</color>
-    <color name="emerald_soft">#25ee79</color>
-    <color name="emerald_back">#007f27</color>
-    <color name="emerald_dark">#1AA923</color>
-    <color name="emerald_soft_dark">#138341</color>
-    <color name="emerald_back_dark">#003E12</color>
+    <color name="emerald">#106D15</color>
+    <color name="emerald_soft">#138341</color>
+    <color name="emerald_back">#003E12</color>
 </resources>
