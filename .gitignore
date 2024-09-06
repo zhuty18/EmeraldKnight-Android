@@ -21,3 +21,4 @@ save
 .vscode
 .github
 app-release.dm
+output-metadata.json
